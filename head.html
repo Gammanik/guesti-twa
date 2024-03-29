@@ -5,32 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Апартаменты для гостей краткосрочной аренды</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="container dark-theme">
-        <h1>Добро пожаловать!</h1>
-        <p class="address">Адрес: ваш адрес</p>
-        
-        <div class="menu">
-            <div class="menu-item">
-                <div class="menu-heading">Заселение и выселение</div>
-                <ul class="submenu">
-                    <li class="info">Информация о залоге</li>
-                    <li class="info">Удаленное заселение</li>
-                </ul>
+<div class="container dark-theme">
+    <h1>Добро пожаловать!</h1>
+    <p class="address">Адрес: ваш адрес</p>
+
+    <div class="menu">
+        <div class="menu-item">
+            <button class="menu-heading" data-title="Информация о залоге">
+                <i class="fas fa-home"></i>
+            </button>
+            <div class="submenu">
+                <div class="card">
+                    <div class="card-content">
+                        <p class="info">Информация о залоге</p>
+                        <p class="card-description">Сумма залога: 5000 рублей. Способ перечисления: спб по номеру 89994567893 в ton: перевести на кошелек AR..QED</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p class="info">Удаленное заселение</p>
+                        <p class="card-description">Возможность заселения вне рабочих часов. Необходимо согласование с менеджером.</p>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="menu-heading">Раздел информации</div>
-                <ul class="submenu">
-                    <li class="info">WiFi</li>
-                    <li class="info">Настройка ТВ</li>
-                    <li class="info">Сейф</li>
-                    <li class="info">Инструкция к кондиционеру</li>
-                </ul>
+        </div>
+        <div class="menu-item">
+            <button class="menu-heading" data-title="WiFi">
+                <i class="fas fa-wifi"></i>
+            </button>
+            <div class="submenu">
+                <div class="card">
+                    <div class="card-content">
+                        <p class="info">WiFi</p>
+                        <p class="card-description">Логин - ваш_логин, Пароль - ваш_пароль</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p class="info">Настройка ТВ</p>
+                        <p class="card-description">Возможность настройки ТВ каналов по вашему запросу.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p class="info">Сейф</p>
+                        <p class="card-description">Для хранения ценных вещей предусмотрен сейф в номере.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <p class="info">Инструкция к кондиционеру</p>
+                        <p class="card-description">Подробная инструкция по использованию кондиционера доступна в номере.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
