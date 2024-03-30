@@ -5,58 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Апартаменты для гостей краткосрочной аренды</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-<div class="container dark-theme">
-    <h1>Добро пожаловать в наши апартаменты!</h1>
-    <p class="address"><a href="https://maps.google.com/?q=улица Фонтанка, дом 1, Санкт-Петербург" target="_blank">Адрес: улица Фонтанка, дом 1, Санкт-Петербург</a></p>
-
-    <div class="menu">
-        <div class="menu-item">
-            <div class="menu-heading" data-title="Приветствие от хозяев">
-                <i class="fas fa-user"></i>
-                <span>Приветствие от хозяев</span>
+    <div class="container dark-theme">
+        <h1>Добро пожаловать!</h1>
+        <p class="address">Адрес: ваш адрес</p>
+        
+        <div class="menu">
+            <div class="menu-item">
+                <div class="menu-heading">Заселение и выселение</div>
+                <ul class="submenu">
+                    <li class="info">Информация о залоге</li>
+                    <li class="info">Удаленное заселение</li>
+                </ul>
             </div>
-            <div class="submenu">
-                <button class="info" data-title="Добро пожаловать!" data-info="Мы очень рады приветствовать вас в наших апартаментах! Надеемся, вы проведете здесь замечательную неделю. Если у вас возникнут вопросы или нужна помощь, не стесняйтесь обращаться к нам. Приятного отдыха!">Добро пожаловать!</button>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-heading" data-title="Как доехать">
-                <i class="fas fa-map-marked-alt"></i>
-                <span>Как доехать</span>
-            </div>
-            <div class="submenu">
-                <button class="info" data-title="Общественным транспортом" data-info="Апартаменты расположены недалеко от остановки общественного транспорта. Вы можете воспользоваться автобусом №X или маршруткой №Y.">Общественным транспортом</button>
-<!--                <button class="info" data-title="На автомобиле" data-info="Для прибытия на автомобиле, воспользуйтесь навигатором и введите адрес: улица Фонтанка, дом 1, Санкт-Петербург.">На автомобиле</button>-->
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-heading" data-title="Информация о проживании">
-                <i class="fas fa-home"></i>
-                <span>Информация о проживании</span>
-            </div>
-            <div class="submenu">
-                <button class="info" data-title="Даты заезда и выезда" data-info="Дата заезда: 01.01.2025<br>Дата выезда: 08.01.2025">Даты заезда и выезда</button>
-                <button class="info" data-title="Пароль от WiFi" data-info="Логин: GuestRoom123<br>Пароль: Welcome123">Пароль от WiFi</button>
-                <button class="info" data-title="Правила проживания" data-info="Просим соблюдать тишину с 22:00. Не курить в помещении. Бережно относиться к имуществу.">Правила проживания</button>
+            <div class="menu-item">
+                <div class="menu-heading">Раздел информации</div>
+                <ul class="submenu">
+                    <li class="info">WiFi</li>
+                    <li class="info">Настройка ТВ</li>
+                    <li class="info">Сейф</li>
+                    <li class="info">Инструкция к кондиционеру</li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal-container">
-    <div class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <i class="modal-icon"></i>
-            <h2 class="modal-title"></h2>
-            <p class="modal-info"></p>
-        </div>
-    </div>
-</div>
-
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
