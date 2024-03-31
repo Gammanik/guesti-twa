@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardTitle = cardContent.querySelector('.info');
             const cardDescription = cardContent.querySelector('.card-description');
 
-            cardTitle.textContent = this.getAttribute('data-title');
-            cardDescription.textContent = cardContent.getAttribute('data-description');
+            // cardTitle.textContent = this.getAttribute('data-title');
+            // cardDescription.textContent = cardContent.getAttribute('data-description');
         });
     });
 });

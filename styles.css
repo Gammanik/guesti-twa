@@ -5,13 +5,14 @@ body {
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100vw; /* Используем ширину всего экрана */
+    height: 100vh; /* Используем высоту всего экрана */
     padding: 20px;
     background-color: #1e1e1e;
     color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Избегаем появления скролла */
 }
 
 h1 {
@@ -23,8 +24,19 @@ h1 {
     margin-bottom: 20px;
 }
 
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    flex: 1 1 33.33%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
 .menu-heading {
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
     padding: 10px;
     background-color: #1a1a1a;
@@ -43,11 +55,21 @@ h1 {
 
 .submenu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #121415;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .submenu.active {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
+    position: absolute;
+    margin-left: 0;
+    width: 100vh; /* Используем высоту всего экрана */
 }
 
 .card {
@@ -60,12 +82,8 @@ h1 {
 
 .card-content {
     padding: 10px;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
-}
-
-.card-content i {
-    margin-right: 10px;
 }
 
 .info {
