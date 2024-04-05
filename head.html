@@ -3,42 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rental App Interface</title>
+    <title>Telegram Style App</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
 </head>
 <body>
 <div class="app">
-    <section class="home-screen">
-        <div class="property-icon"></div>
-        <h1>Property Name</h1>
-    </section>
+    <div class="tab-content" id="home-content">Домашняя страница</div>
+    <div class="tab-content" id="info-content">Информация</div>
+    <div class="tab-content" id="chat-content">Чат</div>
+    <div class="tab-content" id="ton-content">TON Кошелек</div>
 
-    <section class="info-screen">
-        <h2>Information</h2>
-        <div class="info-item" onclick="toggleInfo('address-info')">
-            <p><strong>Address & More</strong></p>
-        </div>
-        <!-- Внутри .info-details добавляем div с классом scrollable-content -->
-        <div id="address-info" class="info-details">
-            <div class="scrollable-content">
-                <p><strong>Address:</strong> 123 Main St, Anytown</p>
-                <p><strong>Wi-Fi Password:</strong> password123</p>
-                <p><strong>Safe Code:</strong> 4862</p>
-                <p><strong>Parking:</strong> Available in the back. Parking pass required.</p>
-                <p><strong>Security Deposit:</strong> $200, refundable upon checkout if no damages.</p>
-                <!-- Дополнительный текст и информация -->
-            </div>
-        </div>
-
-    </section>
-
-    <section class="chat-screen">
-        <h2>Contact Manager</h2>
-        <div class="chat-interface">
-            <p>Message here...</p>
-        </div>
-    </section>
+    <div class="navbar">
+        <div class="nav-item" onclick="switchTab('home')">Домой</div>
+        <div class="nav-item" onclick="switchTab('info')">Инфо</div>
+        <div class="nav-item" onclick="switchTab('chat')">Чат</div>
+        <div class="nav-item" onclick="switchTab('ton')">TON</div>
+    </div>
 </div>
+<script src="scripts.js"></script>
 </body>
 </html>
