@@ -3,83 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Апартаменты для гостей краткосрочной аренды</title>
+    <title>Rental App Interface</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
-<div class="container dark-theme">
-    <h1>Добро пожаловать!</h1>
-    <p class="address">Ваш адрес: <a href="#" class="address-link">ул Фонтанки 25</a></p>
-    <p class="dates">01.05.24 - 07.05.24</p>
+<div class="app">
+    <section class="home-screen">
+        <div class="property-icon"></div>
+        <h1>Property Name</h1>
+    </section>
 
-    <div class="menu">
-        <div class="menu-item">
-            <button class="menu-heading" data-title="house-info">
-                <i class="fas fa-home"></i>
-            </button>
-            <div class="submenu">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">Информация о залоге</p>
-                        <p class="card-description">Сумма залога: 5000 рублей. Способ перечисления: спб по номеру 89994567893 в ton: перевести на кошелек AR..QED</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">Удаленное заселение</p>
-                        <p class="card-description">Возможность заселения вне рабочих часов. Необходимо согласование с менеджером.</p>
-                    </div>
-                </div>
+    <section class="info-screen">
+        <h2>Information</h2>
+        <div class="info-item" onclick="toggleInfo('address-info')">
+            <p><strong>Address & More</strong></p>
+        </div>
+        <!-- Внутри .info-details добавляем div с классом scrollable-content -->
+        <div id="address-info" class="info-details">
+            <div class="scrollable-content">
+                <p><strong>Address:</strong> 123 Main St, Anytown</p>
+                <p><strong>Wi-Fi Password:</strong> password123</p>
+                <p><strong>Safe Code:</strong> 4862</p>
+                <p><strong>Parking:</strong> Available in the back. Parking pass required.</p>
+                <p><strong>Security Deposit:</strong> $200, refundable upon checkout if no damages.</p>
+                <!-- Дополнительный текст и информация -->
             </div>
         </div>
-        <div class="menu-item">
-            <button class="menu-heading" data-title="WiFi">
-                <i class="fas fa-coins"></i>
-            </button>
-            <div class="submenu">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">WiFi</p>
-                        <p class="card-description">Логин - ваш_логин, Пароль - ваш_пароль</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">Настройка ТВ</p>
-                        <p class="card-description">Возможность настройки ТВ каналов по вашему запросу.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">Сейф</p>
-                        <p class="card-description">Для хранения ценных вещей предусмотрен сейф в номере.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">Инструкция к кондиционеру</p>
-                        <p class="card-description">Подробная инструкция по использованию кондиционера доступна в номере.</p>
-                    </div>
-                </div>
-            </div>
+
+    </section>
+
+    <section class="chat-screen">
+        <h2>Contact Manager</h2>
+        <div class="chat-interface">
+            <p>Message here...</p>
         </div>
-        <div class="menu-item">
-            <button class="menu-heading" data-title="Связаться с нами">
-                <i class="fas fa-comment-alt"></i>
-            </button>
-            <div class="submenu">
-                <div class="card">
-                    <div class="card-content">
-                        <p class="info">Связаться с нами</p>
-                        <p class="card-description">Если у вас есть вопросы или нужна помощь, напишите нам сообщение.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 </div>
-
-<script src="scripts.js"></script>
 </body>
 </html>
