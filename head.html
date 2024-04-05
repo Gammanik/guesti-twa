@@ -8,17 +8,39 @@
 </head>
 <body>
 <div class="app">
-    <div class="tab-content" id="home-content">Домашняя страница</div>
-    <div class="tab-content" id="info-content">Информация</div>
-    <div class="tab-content" id="chat-content">Чат</div>
-    <div class="tab-content" id="ton-content">TON Кошелек</div>
+    <div class="tab-content" id="home-content">
+        <h2>Домашняя страница</h2>
+        <p>Добро пожаловать в наше приложение!</p>
+    </div>
+    <div class="tab-content" id="info-content">
+        <h2>Информационный экран</h2>
+        <p>Здесь вы найдете всю необходимую информацию.</p>
+    </div>
+    <div class="tab-content" id="chat-content">
+        <h2>Чат</h2>
+        <p>Напишите администратору.</p>
+    </div>
+    <div class="tab-content" id="ton-content">
+        <h2>TON Кошелек</h2>
+        <p>Ваш баланс: 100 TON</p>
+    </div>
+
 
     <div class="navbar">
-        <div class="nav-item" onclick="switchTab('home')">Домой</div>
-        <div class="nav-item" onclick="switchTab('info')">Инфо</div>
-        <div class="nav-item" onclick="switchTab('chat')">Чат</div>
-        <div class="nav-item" onclick="switchTab('ton')">TON</div>
+        <div class="nav-item" onclick="switchTab('home')">
+            <span class="icon">🏠</span><br>Домой
+        </div>
+        <div class="nav-item" onclick="switchTab('info')">
+            <span class="icon">ℹ️</span><br>Инфо
+        </div>
+        <div class="nav-item" onclick="switchTab('chat')">
+            <span class="icon">💬</span><br>Чат
+        </div>
+        <div class="nav-item" onclick="switchTab('ton')">
+            <span class="icon">💎</span><br>TON
+        </div>
     </div>
+
 </div>
 <script src="scripts.js"></script>
 </body>

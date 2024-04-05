@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #2C2C2E;
+    background-color: #121212;
     color: #FFFFFF;
     text-align: center;
 }
@@ -10,29 +10,62 @@ body, html {
 .app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .tab-content {
     flex-grow: 1;
     display: none;
+    padding: 20px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #333;
+    background: linear-gradient(145deg, #323234, #1b1b1d);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
 }
 
 .nav-item {
-    padding: 10px;
     text-align: center;
     flex-grow: 1;
-    border-top: 3px solid transparent;
+    transition: background-color 0.3s;
+    padding: 10px 5px;
+    border-radius: 10px;
+    margin: 0 5px;
 }
 
 .nav-item:hover, .nav-item.active {
-    background-color: #444;
-    border-top: 3px solid #32D74B;
+    background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
+}
+
+.icon {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* Стиль заголовков и текста для улучшения читаемости */
+h2 {
+    color: #32D74B;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Стиль для активного контента */
+.tab-content {
+    display: none; /* Скрыть весь контент по умолчанию */
+}
+
+.tab-content.active {
+    display: block; /* Показать активный контент */
 }
