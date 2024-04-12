@@ -95,27 +95,37 @@ p {
 
 .info-item {
     background-color: #2C2C2E;
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer; /* Указатель курсора для интерактивности */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 60px; /* Ограничиваем высоту для сжатой карточки */
+    display: flex;
+    align-items: center; /* Центрируем содержимое по вертикали */
 }
 
-.info-item:hover {
-    transform: translateY(-5px);
+.info-item h2 {
+    font-size: 16px; /* Уменьшаем размер заголовка */
+    white-space: nowrap; /* Запрет на перенос строк */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Троеточие если текст не помещается */
+    flex-grow: 1; /* Заголовок занимает все доступное пространство */
 }
 
 .info-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
+    display: none; /* Скрыть содержимое карточки по умолчанию */
 }
 
-/* Добавлены классы для управления видимостью содержимого карточек */
-.info-item.expanded .info-content {
-    max-height: 500px; /* Достаточно большое значение для раскрытия содержимого */
-    padding: 10px;
+.info-item.expanded {
+    max-height: 1000px; /* При раскрытии увеличиваем максимальную высоту */
 }
+
+.info-item.expanded .info-content {
+    display: block; /* Показываем содержимое при раскрытии */
+}
+
+
 
 .icon {
     font-size: 24px;

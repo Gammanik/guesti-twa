@@ -14,12 +14,7 @@
 // document.addEventListener('DOMContentLoaded', () => {
 //     switchTab('home');
 //
-//     document.querySelectorAll('.info-item').forEach(item => {
-//         item.addEventListener('click', () => {
-//             // Переключаем класс 'expanded' для карточки и её содержимого
-//             item.classList.toggle('expanded');
-//         });
-//     });
+
 // });
 
 
@@ -43,4 +38,34 @@ function switchTab(tabName) {
 // Активация первой вкладки при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     switchTab('home'); // Установить 'home' как начальный активный раздел
+
+
+    document.querySelectorAll('.info-item').forEach(item => {
+        item.addEventListener('click', () => {
+            // Переключаем класс 'expanded' для карточки и её содержимого
+            item.classList.toggle('expanded');
+        });
+    });
+
+
+    document.querySelectorAll('.info-item').forEach(item => {
+        item.addEventListener('click', () => {
+            // Сначала закрываем все карточки
+            document.querySelectorAll('.info-item').forEach(i => {
+                i.classList.remove('expanded');
+                i.style.maxHeight = '60px'; // Сжимаем все карточки
+            });
+
+            // Раскрываем кликнутую карточку, если она была закрыта
+            if (!item.classList.contains('expanded')) {
+                item.classList.add('expanded');
+                item.style.maxHeight = '1000px'; // Устанавливаем максимальную высоту для раскрытия
+            } else {
+                item.classList.remove('expanded');
+                item.style.maxHeight = '60px'; // Сжимаем карточку, если она была раскрыта
+            }
+        });
+    });
+
+
 });
