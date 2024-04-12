@@ -5,24 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telegram Style App</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="app">
-    <div class="tab-content" id="home-content"></div>
-    <div class="tab-content" id="info-content">
-        <h2>Информационный экран</h2>
-        <p>Здесь вы найдете всю необходимую информацию.</p>
-    </div>
-    <div class="tab-content" id="chat-content">
-        <h2>Чат</h2>
-        <p>Напишите администратору.</p>
-    </div>
-    <div class="tab-content" id="ton-content">
-        <h2>TON Кошелек</h2>
-        <p>Ваш баланс: 100 TON</p>
-    </div>
-
-
     <div class="navbar">
         <div class="nav-item" onclick="switchTab('home')">
             <span class="icon">🏠</span><br>Домой
@@ -37,6 +23,40 @@
             <span class="icon">💎</span><br>TON
         </div>
     </div>
+
+    <div class="tab-content" id="home-content">
+        <div class="home-container">
+            <section class="welcome-section">
+                <h1>Добро пожаловать в наше жилье!</h1>
+                <p>Мы рады приветствовать вас и надеемся, что ваше пребывание у нас будет комфортным и приятным.</p>
+            </section>
+
+            <section class="info-section">
+                <div class="info-item" id="wifi-info">
+                    <span class="icon">&#128246;</span> <!-- Пример иконки (Wi-Fi) -->
+                    <h2>Wi-Fi</h2>
+                    <div class="info-content">
+                        <p>Сеть: <strong>GuestHouse</strong></p>
+                        <p>Пароль: <strong>welcome2024</strong></p>
+                    </div>
+                </div>
+
+                <div class="info-item" id="check-in-info">
+                    <span class="icon">&#128204;</span> <!-- Пример иконки (Ключ) -->
+                    <h2>Заезд и Выезд</h2>
+                    <div class="info-content">
+                        <p>Заезд после 14:00, выезд до 12:00.</p>
+                        <p>Ключи найдете в почтовом ящике под кодом: <strong>1234</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Добавьте другие разделы по аналогии -->
+            </section>
+        </div>
+    </div>
+    <div class="tab-content" id="info-content">Информационный экран</div>
+    <div class="tab-content" id="chat-content">Чат</div>
+    <div class="tab-content" id="ton-content">TON Кошелек</div>
 
 </div>
 <script src="scripts.js"></script>

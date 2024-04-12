@@ -69,3 +69,65 @@ p {
 .tab-content.active {
     display: block; /* Показать активный контент */
 }
+
+
+
+/* Стиль для главной страницы */
+
+.home-container {
+    color: #fff;
+    background-color: #121212;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto; /* Уменьшено смещение */
+}
+
+.welcome-section {
+    margin-bottom: 20px; /* Меньшее смещение приветственного сообщения */
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки для карточек */
+    gap: 20px;
+}
+
+.info-item {
+    background-color: #2C2C2E;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Указатель курсора для интерактивности */
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+/* Добавлены классы для управления видимостью содержимого карточек */
+.info-item.expanded .info-content {
+    max-height: 500px; /* Достаточно большое значение для раскрытия содержимого */
+    padding: 10px;
+}
+
+.icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* Существующие стили ... */
+.nav-item.active {
+    background-color: #444; /* Для активного элемента установить более темный фон */
+    color: white;
+    border-bottom: 3px solid #32D74B; /* Зеленый индикатор активности */
+}
+
