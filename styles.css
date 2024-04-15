@@ -83,8 +83,6 @@ p {
     background-color: #121212;
     padding: 20px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    max-width: 800px;
-    margin: 20px auto; /* Уменьшено смещение */
 }
 
 .welcome-section {
