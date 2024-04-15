@@ -99,7 +99,7 @@ p {
 .info-item {
     background-color: #2C2C2E;
     padding: 14px;
-    margin: 10px 0;
+    margin: 10px 5%; /* Центрирование карточки с отступами по бокам */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -108,7 +108,6 @@ p {
     transform: scale(1) translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 90%; /* Ширина карточки */
-    /*margin: 5% auto; !* Центрирование карточки *!*/
 }
 
 .info-item:hover {
@@ -116,24 +115,21 @@ p {
 }
 
 .info-item.expanded {
-    /*transform: scale(1.5) translateY(-50%); !* Увеличение и подъем карточки *!*/
-    z-index: 100; /* Поднимаем выше других элементов */
-    position: fixed; /* Фиксированное позиционирование */
-    top: 50%; /* Центрирование по вертикали */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translate(-50%, -50%) scale(1.1); /* Центрирование и масштабирование */
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    width: 80%; /* Уменьшаем ширину для отступов по бокам */
+    margin: 0; /* Убираем margin, когда карточка расширяется */
 }
 
 .info-item.expanded .info-content {
     opacity: 1;
     display: block;
     max-height: 800px; /* Максимальная высота содержимого */
-    padding: 20px; /* Поле вокруг текста */
-}
-
-.info-item.expanded h2, .info-item.expanded .icon {
-    /*display: none; !* Скрываем заголовок и иконку в расширенном состоянии *!*/
+    padding: 20px;
 }
 
 .info-content {
@@ -141,8 +137,20 @@ p {
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.5s ease, max-height 0.5s ease;
-    width: 100%; /* Ширина контента */
+    width: 100%;
 }
+
+/*.info-item.expanded h2, .info-item.expanded .icon {*/
+/*    display: block; !* Убедимся, что заголовок и иконка отображаются при раскрытии *!*/
+/*}*/
+
+.info-item.expanded .icon {
+    display: none; /* Убедимся, что заголовок и иконка отображаются при раскрытии */
+}
+
+
+
+
 
 .icon {
     font-size: 24px;
