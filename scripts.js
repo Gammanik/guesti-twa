@@ -41,33 +41,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.querySelectorAll('.info-item').forEach(item => {
-        item.addEventListener('click', () => {
-            // Переключаем класс 'expanded' для карточки и её содержимого
-            item.classList.toggle('expanded');
-        });
-    });
-
-
-    document.querySelectorAll('.info-item').forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (event) => {
+            event.stopPropagation(); // Предотвращаем всплытие события
             const expanded = item.classList.contains('expanded');
-            // Сначала сжимаем все карточки
-            document.querySelectorAll('.info-item').forEach(i => {
-                i.classList.remove('expanded');
-                i.querySelector('.info-content').style.maxHeight = '0';
-                i.querySelector('.info-content').style.opacity = '0';
-            });
-
-            // Раскрываем выбранную карточку, если она не была раскрыта
+            closeAllItems(); // Закрыть все карточки
             // if (!expanded) {
                 item.classList.add('expanded');
-                const content = item.querySelector('.info-content');
-
-                content.style.maxHeight = '800px'; // Увеличиваем максимальную высоту для раскрытия
-                content.style.opacity = '1';
             // }
         });
     });
+
+    document.body.addEventListener('click', (event) => {
+        if (!event.target.closest('.info-item')) {
+            closeAllItems(); // Закрыть все карточки при клике вне карточки
+        }
+    });
+
+    function closeAllItems() {
+        document.querySelectorAll('.info-item').forEach(i => {
+            i.classList.remove('expanded');
+            i.querySelector('.info-content').style.maxHeight = '0';
+            i.querySelector('.info-content').style.opacity = '0';
+        });
+    }
+
+
+
 
 
 });

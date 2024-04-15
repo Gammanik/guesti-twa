@@ -92,36 +92,23 @@ p {
 .info-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Две колонки для карточек */
-    gap: 20px;
+    row-gap: 2px;
+    column-gap: 22px;
 }
 
 .info-item {
     background-color: #2C2C2E;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    max-height: 60px; /* Ограничиваем высоту для сжатой карточки */
-    display: flex;
-    align-items: center; /* Центрируем содержимое по вертикали */
-    position: relative; /* Необходимо для позиционирования абсолютного содержимого */
-}
-
-.info-item {
-    background-color: #2C2C2E;
-    padding: 15px;
-    margin-bottom: 10px;
+    padding: 14px;
+    margin: 10px 0;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    transition: all 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
     cursor: pointer;
-    transform: scale(1); /* Нормальное состояние */
+    transform: scale(1) translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 90%; /* Ширина карточки */
-    margin: 5% auto; /* Центрирование карточки */
+    /*margin: 5% auto; !* Центрирование карточки *!*/
 }
 
 .info-item:hover {
@@ -129,13 +116,24 @@ p {
 }
 
 .info-item.expanded {
-    transform: translateY(-50px) scale(1.5); /* Подъем и небольшое увеличение */
+    /*transform: scale(1.5) translateY(-50%); !* Увеличение и подъем карточки *!*/
     z-index: 100; /* Поднимаем выше других элементов */
-    /*h2: */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%) scale(1.1); /* Центрирование и масштабирование */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.info-item.expanded h2 {
-    font-size: 0px; /* Уменьшаем размер заголовка */
+.info-item.expanded .info-content {
+    opacity: 1;
+    display: block;
+    max-height: 800px; /* Максимальная высота содержимого */
+    padding: 20px; /* Поле вокруг текста */
+}
+
+.info-item.expanded h2, .info-item.expanded .icon {
+    /*display: none; !* Скрываем заголовок и иконку в расширенном состоянии *!*/
 }
 
 .info-content {
@@ -143,15 +141,8 @@ p {
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.5s ease, max-height 0.5s ease;
+    width: 100%; /* Ширина контента */
 }
-
-.info-item.expanded .info-content {
-    opacity: 1;
-    max-height: 800px; /* Максимальная высота содержимого */
-    padding: 20px; /* Поле вокруг текста */
-}
-
-
 
 .icon {
     font-size: 24px;
@@ -167,3 +158,64 @@ p {
     border-bottom: 3px solid #32D74B; /* Зеленый индикатор активности */
 }
 
+
+/* --------------   T O N    --------------*/
+#ton-content {
+    background-color: #121212;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#ton-content h1 {
+    text-align: center;
+    color: #32D74B;
+    margin-bottom: 30px;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    background-color: #2C2C2E;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+    color: #32D74B; /* Зелёный цвет, ассоциируемый с финансовой выгодой */
+    font-size: 40px; /* Большой размер для лучшей видимости */
+    margin-right: 20px;
+}
+
+.service-info h2 {
+    margin-top: 0;
+    color: #32D74B;
+}
+
+.service-info p, .service-info ul {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.service-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.fa-coins {
+    color: #ffd700; /* Золотой цвет для монеты */
+    margin-right: 10px;
+}
