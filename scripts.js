@@ -50,20 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.info-item').forEach(item => {
         item.addEventListener('click', () => {
-            // Сначала закрываем все карточки
+            const expanded = item.classList.contains('expanded');
+            // Сначала сжимаем все карточки
             document.querySelectorAll('.info-item').forEach(i => {
                 i.classList.remove('expanded');
-                i.style.maxHeight = '60px'; // Сжимаем все карточки
+                i.querySelector('.info-content').style.maxHeight = '0';
+                i.querySelector('.info-content').style.opacity = '0';
             });
 
-            // Раскрываем кликнутую карточку, если она была закрыта
-            if (!item.classList.contains('expanded')) {
+            // Раскрываем выбранную карточку, если она не была раскрыта
+            // if (!expanded) {
                 item.classList.add('expanded');
-                item.style.maxHeight = '1000px'; // Устанавливаем максимальную высоту для раскрытия
-            } else {
-                item.classList.remove('expanded');
-                item.style.maxHeight = '60px'; // Сжимаем карточку, если она была раскрыта
-            }
+                const content = item.querySelector('.info-content');
+
+                content.style.maxHeight = '800px'; // Увеличиваем максимальную высоту для раскрытия
+                content.style.opacity = '1';
+            // }
         });
     });
 

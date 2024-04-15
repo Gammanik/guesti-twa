@@ -53,7 +53,9 @@ body, html {
 /* Стиль заголовков и текста для улучшения читаемости */
 h2 {
     color: #32D74B;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 16px;
 }
 
 p {
@@ -95,34 +97,58 @@ p {
 
 .info-item {
     background-color: #2C2C2E;
-    padding: 10px 20px;
+    padding: 20px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    transition: all 0.3s ease;
-    cursor: pointer;
     overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
     max-height: 60px; /* Ограничиваем высоту для сжатой карточки */
     display: flex;
     align-items: center; /* Центрируем содержимое по вертикали */
+    position: relative; /* Необходимо для позиционирования абсолютного содержимого */
 }
 
-.info-item h2 {
-    font-size: 16px; /* Уменьшаем размер заголовка */
-    white-space: nowrap; /* Запрет на перенос строк */
+.info-item {
+    background-color: #2C2C2E;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
     overflow: hidden;
-    text-overflow: ellipsis; /* Троеточие если текст не помещается */
-    flex-grow: 1; /* Заголовок занимает все доступное пространство */
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform: scale(1); /* Нормальное состояние */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Ширина карточки */
+    margin: 5% auto; /* Центрирование карточки */
 }
 
-.info-content {
-    display: none; /* Скрыть содержимое карточки по умолчанию */
+.info-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .info-item.expanded {
-    max-height: 1000px; /* При раскрытии увеличиваем максимальную высоту */
+    transform: translateY(-50px) scale(1.5); /* Подъем и небольшое увеличение */
+    z-index: 100; /* Поднимаем выше других элементов */
+    /*h2: */
+}
+
+.info-item.expanded h2 {
+    font-size: 0px; /* Уменьшаем размер заголовка */
+}
+
+.info-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
 }
 
 .info-item.expanded .info-content {
-    display: block; /* Показываем содержимое при раскрытии */
+    opacity: 1;
+    max-height: 800px; /* Максимальная высота содержимого */
+    padding: 20px; /* Поле вокруг текста */
 }
 
 
