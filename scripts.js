@@ -39,17 +39,32 @@ function switchTab(tabName) {
 document.addEventListener('DOMContentLoaded', () => {
     switchTab('home'); // Установить 'home' как начальный активный раздел
 
-    document.querySelectorAll('.info-item').forEach(item => {
-        item.addEventListener('click', () => {
-            // Сначала сжимаем все карточки, убирая класс 'expanded'
-            document.querySelectorAll('.info-item').forEach(i => {
-                i.classList.remove('expanded');
-                i.querySelector('.info-content').style.maxHeight = '0';
-                i.querySelector('.info-content').style.opacity = '0';
-            });
+    // document.querySelectorAll('.info-item').forEach(item => {
+    //     item.addEventListener('click', () => {
+    //         // Сначала сжимаем все карточки, убирая класс 'expanded'
+    //         document.querySelectorAll('.info-item').forEach(i => {
+    //             i.classList.remove('expanded');
+    //             i.querySelector('.info-content').style.maxHeight = '0';
+    //             i.querySelector('.info-content').style.opacity = '0';
+    //         });
+    //
+    //         // Раскрываем выбранную карточку, если она не была раскрыта
+    //         if (!item.classList.contains('expanded')) {
+    //             item.classList.add('expanded');
+    //             const content = item.querySelector('.info-content');
+    //             content.style.maxHeight = '500px'; // Устанавливаем максимальную высоту для содержимого
+    //             content.style.opacity = '1'; // Убедимся, что контент становится видимым
+    //         }
+    //     });
+    // });
 
-            // Раскрываем выбранную карточку, если она не была раскрыта
-            if (!item.classList.contains('expanded')) {
+
+    document.querySelectorAll('.info-item').forEach(item => {
+        item.addEventListener('click', (event) => {
+            event.stopPropagation(); // Предотвращаем всплытие события
+            const expanded = item.classList.contains('expanded');
+            closeAllItems(); // Закрыть все карточки
+            if (!expanded) {
                 item.classList.add('expanded');
                 const content = item.querySelector('.info-content');
                 content.style.maxHeight = '500px'; // Устанавливаем максимальную высоту для содержимого
@@ -58,23 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    // document.querySelectorAll('.info-item').forEach(item => {
-    //     item.addEventListener('click', (event) => {
-    //         event.stopPropagation(); // Предотвращаем всплытие события
-    //         const expanded = item.classList.contains('expanded');
-    //         closeAllItems(); // Закрыть все карточки
-    //         if (!expanded) {
-    //             item.classList.add('expanded');
-    //         }
-    //     });
-    // });
-
-    // document.body.addEventListener('click', (event) => {
-    //     if (!event.target.closest('.info-item')) {
-    //         closeAllItems(); // Закрыть все карточки при клике вне карточки
-    //     }
-    // });
+    document.body.addEventListener('click', (event) => {
+        if (!event.target.closest('.info-item')) {
+            closeAllItems(); // Закрыть все карточки при клике вне карточки
+        }
+    });
 
     function closeAllItems() {
         document.querySelectorAll('.info-item').forEach(i => {
